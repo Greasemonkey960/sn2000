@@ -19,11 +19,10 @@ speed = [2.7, 0]
 thrust = 1.0
 grav = [0, 0.2]
 black = (0, 0, 0)
-#bg = pygame.image.load("sn2000.png")
-bg = None
+bg = pygame.image.load("sn2000.png")
 pitch = 0
 
-screen = pygame.display.set_mode(size, flags = 0, vsync = 1)
+screen = pygame.display.set_mode(size, flags = pygame.DOUBLEBUF | pygame.SCALED, vsync = 1)
 
 ball = pygame.image.load("starship.png")
 
@@ -72,6 +71,5 @@ while 1:
         screen.blit(bg, (0, 0))
     screen.blit(ball_rotated, ballrect)
     pygame.display.flip()
-    time.sleep(0.0)
-    print(f"speed={speed} thrustvector={thrust_vector}")
+    print(f"speed={speed[0]:.3f} thrustvector={thrust_vector}")
 
