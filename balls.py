@@ -16,15 +16,23 @@ def vec_sub(a, b):
 
 
 size = width, height = 1910, 900
+<<<<<<< HEAD
 speed = [0.27, 0]
 thrust = 0.2
 grav = [0, 0.1]
 black = (0, 0, 0x22)
 #bg = pygame.image.load("sn2000.png")
 bg = None
+=======
+speed = [2.7, 0]
+thrust = 1.0
+grav = [0, 0.2]
+black = (0, 0, 0)
+bg = pygame.image.load("sn2000.png")
+>>>>>>> 7f1f8ed2e9197673dd6cbe4035df452e48506960
 pitch = 0
 
-screen = pygame.display.set_mode(size, flags = 0, vsync = 1)
+screen = pygame.display.set_mode(size, flags = pygame.DOUBLEBUF | pygame.SCALED, vsync = 1)
 
 ship = pygame.image.load("starship.png")
 explosion = pygame.image.load("nuclear-explosion.png")
@@ -89,6 +97,5 @@ while True:
         screen.blit(bg, (0, 0))
     screen.blit(ship_rotated, shiprect)
     pygame.display.flip()
-    time.sleep(0.01)
-    print(f"speed={speed} thrust={thrust_vector}")
+    print(f"speed={speed[0]:.3f} thrustvector={thrust_vector}")
 
